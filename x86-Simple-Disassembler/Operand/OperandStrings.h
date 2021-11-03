@@ -1,6 +1,4 @@
-#ifndef OPERAND_STRINGS_HEADER
-#define OPERAND_STRINGS_HEADER
-
+#pragma once
 #ifndef STRING_SIZE_OFFSETS
 #define STRING_SIZE_OFFSETS
 
@@ -21,5 +19,3 @@ extern const char * SegmentRegisterString[24];
 #endif
 
 extern const char * ConstantString[1];
-
-#endif

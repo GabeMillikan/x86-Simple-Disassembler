@@ -1,6 +1,4 @@
-#ifndef MOD_REG_RM_ENUMS_HEADER
-#define MOD_REG_RM_ENUMS_HEADER
-
+#pragma once
 enum class Mod
 {
 /* 0x00 */ _,      //No Mod (Default)
@@ -61,6 +59,4 @@ enum class Size
 
 /* 0x08 */ p,   //32-bit pointer
 };
-#endif
-
 #endif

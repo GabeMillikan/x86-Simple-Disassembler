@@ -1,6 +1,4 @@
-#ifndef OPERATOR_ENUMS_HEADER
-#define OPERATOR_ENUMS_HEADER
-
+#pragma once
 enum class Mnemonic
 {
 /* 0x00000 */ _,      //No Operator
@@ -277,5 +275,3 @@ enum class Prefix
 
 /* 0x40001 */ LAST               //Placeholder
 };
-
-#endif

@@ -1,6 +1,4 @@
-#ifndef MOD_REG_RM_HEADER
-#define MOD_REG_RM_HEADER
-
+#pragma once
 #include "../Instruction/Instruction.h"
 #include "./ModRegRMSchemas.h"
 
@@ -75,5 +73,3 @@ private:
 	const char * GetSegmentRegisterString();
 	const char * GetSizeString();
 };
-
-#endif

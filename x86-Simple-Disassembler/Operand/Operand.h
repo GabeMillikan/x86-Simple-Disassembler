@@ -1,6 +1,4 @@
-#ifndef OPERAND_HEADER
-#define OPERAND_HEADER
-
+#pragma once
 #include "../Instruction/Instruction.h"
 
 class Operand
@@ -78,5 +76,3 @@ private:
 	const char * GetFixedConstantString();
 	const char * GetSizeString();
 };
-
-#endif

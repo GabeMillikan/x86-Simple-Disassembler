@@ -1,6 +1,4 @@
-#ifndef MOD_REG_RM_STRINGS_HEADER
-#define MOD_REG_RM_STRINGS_HEADER
-
+#pragma once
 #ifndef STRING_SIZE_OFFSETS
 #define STRING_SIZE_OFFSETS
 
@@ -20,6 +18,4 @@ extern const char * RMString[24];
 #ifndef SEGMENT_REGISTER_STRING
 #define SEGMENT_REGISTER_STRING
 extern const char * SegmentRegisterString[24];
-#endif
-
 #endif

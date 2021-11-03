@@ -1,6 +1,4 @@
-#ifndef SIB_ENUMS_HEADER
-#define SIB_ENUMS_HEADER
-
+#pragma once
 enum class Scale
 {
 /* 0x00 */ _,    //No Scale (Default)
@@ -38,5 +36,3 @@ enum class Base
 /* 0x07 */ ESI, //General ESI Register
 /* 0x08 */ EDI  //General EDI Register
 };
-
-#endif

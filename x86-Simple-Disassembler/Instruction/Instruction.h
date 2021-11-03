@@ -1,6 +1,4 @@
-#ifndef INSTRUCTION_HEADER
-#define INSTRUCTION_HEADER
-
+#pragma once
 #include "./InstructionSchemas.h"
 #include "../DisassemblerTypes.h"
 
@@ -68,5 +66,3 @@ private:
 	char * GetOperandsString();
 	char * GetValueString();
 };
-
-#endif

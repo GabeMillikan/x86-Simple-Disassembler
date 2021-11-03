@@ -1,6 +1,4 @@
-#ifndef OPERATOR_SCHEMAS_HEADER
-#define OPERATOR_SCHEMAS_HEADER
-
+#pragma once
 #include "./OperatorEnums.h"
 
 struct OperatorSchema
@@ -17,5 +15,3 @@ struct OperatorSchema
 };
 
 extern const OperatorSchema EmptyOperatorSchema;
-
-#endif

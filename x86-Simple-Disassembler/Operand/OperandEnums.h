@@ -1,6 +1,4 @@
-#ifndef OPERAND_ENUMS_HEADER
-#define OPERAND_ENUMS_HEADER
-
+#pragma once
 enum class AddressingMethod
 {
 /* 0x00 */ _,   //No Operand
@@ -100,6 +98,4 @@ enum class Size
 
 /* 0x08 */ p,   //32-bit pointer
 };
-#endif
-
 #endif

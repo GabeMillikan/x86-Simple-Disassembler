@@ -1,6 +1,4 @@
-#ifndef MOD_REG_RM_SCHEMAS_HEADER
-#define MOD_REG_RM_SCHEMAS_HEADER
-
+#pragma once
 #include "./ModRegRMEnums.h"
 
 struct ModRegRMSchema
@@ -26,5 +24,3 @@ struct ModRegRMSchema
 extern const ModRegRMSchema EmptyModRegRMSchema;
 
 extern const ModRegRMSchema ModRegRMSchemas[0x100 /* 00 000 000 - 11 111 111 */];
-
-#endif

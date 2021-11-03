@@ -1,6 +1,4 @@
-#ifndef SIB_HEADER
-#define SIB_HEADER
-
+#pragma once
 #include "./SIBSchemas.h"
 #include "../ModRegRM/ModRegRM.h"
 
@@ -49,5 +47,3 @@ private:
 	const char * GetBaseString();
 	char * GetDisplacementString();
 };
-
-#endif

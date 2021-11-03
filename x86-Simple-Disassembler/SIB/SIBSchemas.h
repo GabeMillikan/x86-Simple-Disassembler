@@ -1,6 +1,4 @@
-#ifndef SIB_SCHEMAS_HEADER
-#define SIB_SCHEMAS_HEADER
-
+#pragma once
 #include "./SIBEnums.h"
 
 struct SIBSchema
@@ -13,5 +11,3 @@ struct SIBSchema
 extern const SIBSchema EmptySIBSchema;
 
 extern const SIBSchema SIBSchemas[0x100 /* 00 000 000 - 11 111 111 */];
-
-#endif

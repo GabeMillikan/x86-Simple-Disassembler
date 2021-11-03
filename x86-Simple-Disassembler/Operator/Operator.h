@@ -1,6 +1,4 @@
-#ifndef OPERATOR_HEADER
-#define OPERATOR_HEADER
-
+#pragma once
 #include "../Instruction/Instruction.h"
 
 class Operator
@@ -18,5 +16,3 @@ private:
 	//Schema
 	OperatorSchema schema = EmptyOperatorSchema;
 };
-
-#endif

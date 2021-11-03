@@ -1,6 +1,2 @@
-#ifndef OPERATOR_STRINGS_HEADER
-#define OPERATOR_STRINGS_HEADER
-
+#pragma once
 extern const char * MnemonicString[154];
-
-#endif
