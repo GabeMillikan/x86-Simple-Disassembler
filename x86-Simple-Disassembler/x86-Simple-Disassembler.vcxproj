@@ -152,7 +152,6 @@
     <ClCompile Include="Operator\Operator.cpp" />
     <ClCompile Include="Operator\OperatorSchemas.cpp" />
     <ClCompile Include="Operator\OperatorStrings.cpp" />
-    <ClCompile Include="PortableExecutable.cpp" />
     <ClCompile Include="SIB\SIB.cpp" />
     <ClCompile Include="SIB\SIBSchemas.cpp" />
     <ClCompile Include="SIB\SIBStrings.cpp" />
@@ -175,7 +174,6 @@
     <ClInclude Include="Operator\OperatorEnums.h" />
     <ClInclude Include="Operator\OperatorSchemas.h" />
     <ClInclude Include="Operator\OperatorStrings.h" />
-    <ClInclude Include="PortableExecutable.h" />
     <ClInclude Include="SIB\SIB.h" />
     <ClInclude Include="SIB\SIBEnums.h" />
     <ClInclude Include="SIB\SIBSchemas.h" />
