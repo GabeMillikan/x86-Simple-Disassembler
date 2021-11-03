@@ -65,67 +65,67 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Disassembler.h">
+    <ClInclude Include="Disassembler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DisassemblerFunctions.h">
+    <ClInclude Include="DisassemblerFunctions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DisassemblerTypes.h">
+    <ClInclude Include="DisassemblerTypes.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModRegRM\ModRegRM.h">
+    <ClInclude Include="ModRegRM\ModRegRM.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModRegRM\ModRegRMEnums.h">
+    <ClInclude Include="ModRegRM\ModRegRMEnums.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModRegRM\ModRegRMSchemas.h">
+    <ClInclude Include="ModRegRM\ModRegRMSchemas.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModRegRM\ModRegRMStrings.h">
+    <ClInclude Include="ModRegRM\ModRegRMStrings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Instruction\Instruction.h">
+    <ClInclude Include="Instruction\Instruction.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Instruction\InstructionSchemas.h">
+    <ClInclude Include="Instruction\InstructionSchemas.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operand\Operand.h">
+    <ClInclude Include="Operand\Operand.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operand\OperandEnums.h">
+    <ClInclude Include="Operand\OperandEnums.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operand\OperandSchemas.h">
+    <ClInclude Include="Operand\OperandSchemas.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operand\OperandStrings.h">
+    <ClInclude Include="Operand\OperandStrings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operator\Operator.h">
+    <ClInclude Include="Operator\Operator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operator\OperatorEnums.h">
+    <ClInclude Include="Operator\OperatorEnums.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operator\OperatorSchemas.h">
+    <ClInclude Include="Operator\OperatorSchemas.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operator\OperatorStrings.h">
+    <ClInclude Include="Operator\OperatorStrings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SIB\SIB.h">
+    <ClInclude Include="SIB\SIB.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SIB\SIBEnums.h">
+    <ClInclude Include="SIB\SIBEnums.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SIB\SIBSchemas.h">
+    <ClInclude Include="SIB\SIBSchemas.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SIB\SIBStrings.h">
+    <ClInclude Include="SIB\SIBStrings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

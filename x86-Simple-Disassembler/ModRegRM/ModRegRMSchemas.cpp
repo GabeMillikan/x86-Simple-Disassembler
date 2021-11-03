@@ -1,4 +1,4 @@
-#include "./ModRegRMSchemas.h"
+#include "./ModRegRMSchemas.hpp"
 
 const ModRegRMSchema EmptyModRegRMSchema = { { Mod::_, Size::_ },{ Reg::_, Size::_ },{ RM::_, Size::_, RM::_ } };
 

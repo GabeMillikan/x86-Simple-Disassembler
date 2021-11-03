@@ -1,7 +1,7 @@
-#include "./Operand.h"
-#include "../DisassemblerFunctions.h"
-#include "../ModRegRM/ModRegRM.h"
-#include "./OperandStrings.h"
+#include "./Operand.hpp"
+#include "../DisassemblerFunctions.hpp"
+#include "../ModRegRM/ModRegRM.hpp"
+#include "./OperandStrings.hpp"
 
 Operand::Operand(Instruction * instruction) : instruction(instruction), opcode(instruction->opcode), index(instruction->index), modRegRM(instruction->modRegRM), operandIndex(instruction->numberOfOperands - 1)
 {

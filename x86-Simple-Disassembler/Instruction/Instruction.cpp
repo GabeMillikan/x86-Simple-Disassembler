@@ -1,10 +1,10 @@
 #include <cstdlib>
 #include <cstring>
-#include "./Instruction.h"
-#include "../ModRegRM/ModRegRM.h"
-#include "../DisassemblerFunctions.h"
-#include "../Operator/Operator.h"
-#include "../Operand/Operand.h"
+#include "./Instruction.hpp"
+#include "../ModRegRM/ModRegRM.hpp"
+#include "../DisassemblerFunctions.hpp"
+#include "../Operator/Operator.hpp"
+#include "../Operand/Operand.hpp"
 
 Instruction::Instruction(byte * opcode, int * index) : opcode(opcode), index(index)
 {

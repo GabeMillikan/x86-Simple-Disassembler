@@ -1,4 +1,4 @@
-#include "./SIBStrings.h"
+#include "./SIBStrings.hpp"
 
 const char * ScaleString[5] = 
 {

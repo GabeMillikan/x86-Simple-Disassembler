@@ -1,6 +1,6 @@
 #pragma once
-#include "../Operator/OperatorSchemas.h"
-#include "../Operand/OperandSchemas.h"
+#include "../Operator/OperatorSchemas.hpp"
+#include "../Operand/OperandSchemas.hpp"
 
 #define NUMBER_OF_OPERANDS 3
 

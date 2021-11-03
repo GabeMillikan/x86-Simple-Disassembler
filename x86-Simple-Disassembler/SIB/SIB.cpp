@@ -1,7 +1,7 @@
 #include <cstdlib>
-#include "./SIB.h"
-#include "../DisassemblerFunctions.h"
-#include "./SIBStrings.h"
+#include "./SIB.hpp"
+#include "../DisassemblerFunctions.hpp"
+#include "./SIBStrings.hpp"
 
 SIB::SIB(ModRegRM * modRegRM) : modRegRM(modRegRM), opcode(modRegRM->opcode), index(modRegRM->index)
 {

@@ -1,6 +1,6 @@
 #pragma once
-#include "./InstructionSchemas.h"
-#include "../DisassemblerTypes.h"
+#include "./InstructionSchemas.hpp"
+#include "../DisassemblerTypes.hpp"
 
 class Operator;
 class Operand;

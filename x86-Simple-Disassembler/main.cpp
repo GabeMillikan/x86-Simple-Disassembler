@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
-#include "DisassemblerTypes.h"
-#include "Disassembler.h"
+#include "DisassemblerTypes.hpp"
+#include "Disassembler.hpp"
 
 #include <Windows.h>
 

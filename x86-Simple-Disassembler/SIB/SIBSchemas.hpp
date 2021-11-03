@@ -1,5 +1,5 @@
 #pragma once
-#include "./SIBEnums.h"
+#include "./SIBEnums.hpp"
 
 struct SIBSchema
 {

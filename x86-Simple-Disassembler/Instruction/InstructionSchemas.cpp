@@ -1,6 +1,6 @@
-#include "./InstructionSchemas.h"
-#include "../Operator/OperatorEnums.h"
-#include "../Operand/OperandEnums.h"
+#include "./InstructionSchemas.hpp"
+#include "../Operator/OperatorEnums.hpp"
+#include "../Operand/OperandEnums.hpp"
 
 InstructionSchema& operator|=(InstructionSchema& left, const InstructionSchema& right)
 {

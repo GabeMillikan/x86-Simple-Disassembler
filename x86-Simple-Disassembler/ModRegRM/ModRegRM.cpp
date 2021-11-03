@@ -1,9 +1,9 @@
 #include <cstdlib>
-#include "./ModRegRM.h"
-#include "../SIB/SIB.h"
-#include "../Operand/Operand.h"
-#include "../DisassemblerFunctions.h"
-#include "./ModRegRMStrings.h"
+#include "./ModRegRM.hpp"
+#include "../SIB/SIB.hpp"
+#include "../Operand/Operand.hpp"
+#include "../DisassemblerFunctions.hpp"
+#include "./ModRegRMStrings.hpp"
 
 ModRegRM::ModRegRM(Instruction * instruction) : instruction(instruction), opcode(instruction->opcode), index(instruction->index)
 {

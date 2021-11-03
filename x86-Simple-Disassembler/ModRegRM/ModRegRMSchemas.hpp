@@ -1,5 +1,5 @@
 #pragma once
-#include "./ModRegRMEnums.h"
+#include "./ModRegRMEnums.hpp"
 
 struct ModRegRMSchema
 {

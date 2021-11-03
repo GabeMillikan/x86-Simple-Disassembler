@@ -1,6 +1,6 @@
 #pragma once
-#include "./DisassemblerTypes.h"
-#include "./Instruction/Instruction.h"
+#include "./DisassemblerTypes.hpp"
+#include "./Instruction/Instruction.hpp"
 
 class Disassembler
 {

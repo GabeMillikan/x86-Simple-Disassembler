@@ -1,4 +1,4 @@
-#include "./ModRegRMStrings.h"
+#include "./ModRegRMStrings.hpp"
 
 const char * GeneralRegisterString[24] =
 {

@@ -1,5 +1,5 @@
-#include "./Operator.h"
-#include "./OperatorStrings.h"
+#include "./Operator.hpp"
+#include "./OperatorStrings.hpp"
 
 Operator::Operator(Instruction * instruction) : instruction(instruction)
 {

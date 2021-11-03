@@ -1,4 +1,4 @@
-#include "./SIBSchemas.h"
+#include "./SIBSchemas.hpp"
 
 const SIBSchema EmptySIBSchema = { Scale::_, Index::_, Base::_ };
 

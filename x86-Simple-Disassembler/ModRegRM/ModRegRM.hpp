@@ -1,6 +1,6 @@
 #pragma once
-#include "../Instruction/Instruction.h"
-#include "./ModRegRMSchemas.h"
+#include "../Instruction/Instruction.hpp"
+#include "./ModRegRMSchemas.hpp"
 
 class SIB;
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "./DisassemblerTypes.h"
+#include "./DisassemblerTypes.hpp"
 
 template<typename T>
 //Returns a value of type byte, word, or dword from a byte array at 'index' advancing 'index' depending on the size of the value read.

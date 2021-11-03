@@ -1,5 +1,5 @@
 #pragma once
-#include "./OperandEnums.h"
+#include "./OperandEnums.hpp"
 
 struct OperandSchema
 {
