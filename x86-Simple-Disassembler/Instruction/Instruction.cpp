@@ -10,17 +10,33 @@ Instruction::Instruction(byte * opcode, int * index) : opcode(opcode), index(ind
 {
 	int startingIndex = *index;
 
-	SetSchema();
+	schema = InstructionSchemas[Select<byte>(opcode, index)];
+	while (Prefix::ES <= schema.operatorSchema.prefix && schema.operatorSchema.prefix <= Prefix::REPE)
+	{
+		prefixes = (Prefix)((int)prefixes | (int)schema.operatorSchema.prefix);
+		schema = InstructionSchemas[Select<byte>(opcode, index)];
+	}
+	if (Group::Immediate <= schema.operatorSchema.group && schema.operatorSchema.group <= Group::TwoByte)
+	{
+		modRegRM = new ModRegRM(this);
+		schema |= GroupSchemas[(int)schema.operatorSchema.group - (int)Group::Immediate][modRegRM->GetOpcodeExtensionValue()];
+	}
 
-	SetOperator();
+	operator_ = new Operator(this);
 
 	while ((schema.operandSchema[numberOfOperands].addressingMethod != AddressingMethod::_ || schema.operandSchema[numberOfOperands].generalRegister != GeneralRegister::_ || schema.operandSchema[numberOfOperands].segmentRegister != SegmentRegister::_ || schema.operandSchema[numberOfOperands].constant != Constant::_) && numberOfOperands < NUMBER_OF_OPERANDS)
 	{
 		numberOfOperands++;
-		SetOperand();
+		operands = (Operand**)realloc(operands, numberOfOperands * sizeof(Operand*));
+
+		operands[numberOfOperands - 1] = new Operand(this);
 	}
 
-	SetValue(startingIndex);
+	valueSize = *index - startingIndex;
+
+	value = (byte*)malloc(valueSize);
+
+	memcpy(value, &opcode[startingIndex], valueSize);
 }
 
 Instruction::~Instruction()
@@ -74,56 +90,9 @@ bool Instruction::HasGroup()
 	return (Group::Immediate <= schema.operatorSchema.group) && (schema.operatorSchema.group <= Group::TwoByte);
 }
 
-void Instruction::SetSchema()
-{
-	schema = InstructionSchemas[Select<byte>(opcode, index)];
-
-	if (HasPrefix())
-	{
-		SetPrefix();
-		SetSchema();
-	}
-	else if (HasGroup())
-	{
-		SetModRegRM();
-		SetGroupSchema();
-	}
-}
-
-void Instruction::SetPrefix()
-{
-	prefixes = (Prefix)((int)prefixes | (int)schema.operatorSchema.prefix);
-}
-
 void Instruction::SetModRegRM()
 {
 	modRegRM = new ModRegRM(this);
-}
-
-void Instruction::SetGroupSchema()
-{
-	schema |= GroupSchemas[(int)schema.operatorSchema.group - (int)Group::Immediate][modRegRM->GetOpcodeExtensionValue()];
-}
-
-void Instruction::SetOperator()
-{
-	operator_ = new Operator(this);
-}
-
-void Instruction::SetOperand()
-{
-	operands = (Operand **)realloc(operands, numberOfOperands * sizeof(Operand *));
-
-	operands[numberOfOperands - 1] = new Operand(this);
-}
-
-void Instruction::SetValue(int startingIndex)
-{
-	valueSize = *index - startingIndex;
-
-	value = (byte *)malloc(valueSize);
-
-	memcpy(value, &opcode[startingIndex], valueSize);
 }
 
 const char * Instruction::GetSegmentPrefixString()

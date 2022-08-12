@@ -5,18 +5,57 @@
 
 Operand::Operand(Instruction * instruction) : instruction(instruction), opcode(instruction->opcode), index(instruction->index), modRegRM(instruction->modRegRM), operandIndex(instruction->numberOfOperands - 1)
 {
-	SetSchema();
+	schema = instruction->schema.operandSchema[operandIndex];
 
-	if (HasModRegRM() && modRegRM == nullptr)
-		SetModRegRM();
-	else if (HasImmediate())
-		SetImmediate();
-	else if (HasRelativeDisplacement())
-		SetRelativeDisplacement();
-	else if (HasMemoryDisplacement())
-		SetMemoryDisplacement();
-	else if (HasDirectAddress())
-		SetDirectAddress();
+	if (((schema.addressingMethod == AddressingMethod::E) || (schema.addressingMethod == AddressingMethod::M) || (schema.addressingMethod == AddressingMethod::G) || (schema.addressingMethod == AddressingMethod::S)) && modRegRM == nullptr)
+	{
+		instruction->SetModRegRM();
+		modRegRM = instruction->modRegRM;
+	}
+	else if (schema.addressingMethod == AddressingMethod::I)
+	{
+		switch (schema.operandSize)
+		{
+		case Size::b:
+			imm8 = Select<byte>(opcode, index);
+			break;
+		case Size::w:
+			imm16 = Select<word>(opcode, index);
+			break;
+		case Size::v:
+			if (instruction->HasOperandPrefix())
+				imm16 = Select<word>(opcode, index);
+			else
+				imm32 = Select<dword>(opcode, index);
+			break;
+		}
+	}
+	else if (schema.addressingMethod == AddressingMethod::J)
+	{
+		switch (schema.operandSize)
+		{
+		case Size::b:
+			disp8 = Select<byte>(opcode, index) + *index;
+			break;
+		case Size::v:
+			if (HasOperandPrefix())
+				disp16 = Select<word>(opcode, index) + *index;
+			else
+				disp32 = Select<dword>(opcode, index) + *index;
+			break;
+		}
+	}
+	else if (schema.addressingMethod == AddressingMethod::O)
+	{
+		if (HasAddressPrefix())
+			disp16 = Select<word>(opcode, index);
+		else
+			disp32 = Select<dword>(opcode, index);
+	}
+	else if (schema.addressingMethod == AddressingMethod::A)
+	{
+		disp32 = Select<dword>(opcode, index);
+	}
 }
 
 char * Operand::GetString()

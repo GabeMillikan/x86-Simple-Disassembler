@@ -7,12 +7,16 @@ SIB::SIB(ModRegRM * modRegRM) : modRegRM(modRegRM), opcode(modRegRM->opcode), in
 {
 	int startingIndex = *index;
 
-	SetSchema();
+	schema = SIBSchemas[Select<byte>(opcode, index)];
 
-	if (HasDisplacement())
-		SetDisplacement();
+	if ((modRegRM->schema.mod == Mod::NoDisp) && (schema.base == Base::EBP))
+		disp32 = Select<dword>(opcode, index);
 
-	SetValue(startingIndex);
+	valueSize = *index - startingIndex;
+
+	value = (byte*)malloc(valueSize);
+
+	memcpy(value, &opcode[startingIndex], valueSize);
 }
 
 SIB::~SIB()

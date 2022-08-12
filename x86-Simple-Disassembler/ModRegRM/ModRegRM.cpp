@@ -9,15 +9,21 @@ ModRegRM::ModRegRM(Instruction * instruction) : instruction(instruction), opcode
 {
 	int startingIndex = *index;
 
-	SetSchema();
+	schema = ModRegRMSchemas[Select<byte>(opcode, index)];
 
-	if (HasSIB())
-		SetSIB();
+	if ((schema.rm == RM::SIB) && !instruction->HasAddressPrefix())
+		sib = new SIB(this);
 
-	if (HasDisplacement())
-		SetDisplacement();
+	if (schema.mod == Mod::Disp)
+		SetModDisplacement();
+	else if ((schema.rm16 == RM::Disp && instruction->HasAddressPrefix()) || (schema.rm == RM::Disp && !instruction->HasAddressPrefix()))
+		SetRMDisplacement();
 
-	SetValue(startingIndex);
+	valueSize = *index - startingIndex;
+
+	value = (byte*)malloc(valueSize);
+
+	memcpy(value, &opcode[startingIndex], valueSize);
 }
 
 ModRegRM::~ModRegRM()

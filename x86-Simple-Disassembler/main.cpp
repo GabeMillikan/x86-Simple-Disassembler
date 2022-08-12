@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include "DisassemblerTypes.hpp"
-#include "Disassembler.hpp"
+#include "Instruction/Instruction.hpp"
 
 #include <Windows.h>
 
@@ -46,9 +46,12 @@ int main()
 	char* execSection = dll + sectionHeaders[executableSection].PointerToRawData;
 	size_t execSize = sectionHeaders[executableSection].SizeOfRawData;
 
-    Disassembler disasm((byte*)execSection, execSize);
-
-    disasm.Print();
+	int blah = 0;
+	while (blah < execSize)
+	{
+		std::cout << (new Instruction((byte*)execSection, &blah))->GetString() << std::endl;
+	}
+    //disasm.Print();
 
     return 0;
 }
